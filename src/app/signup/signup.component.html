@@ -1,0 +1,20 @@
+<div class="signup">
+  <div class="register">
+    <div class="form-container">
+      <form #userRegister="ngForm" (ngSubmit)="Register(userRegister.value)" class="register-form">
+        <h2>Register</h2>
+        <div class="input-form">
+          <input type="text" id="fullname" name="name" ngModel placeholder="Full Name" required />
+        </div>
+        <div class="input-form">
+          <input type="email" id="email" name="email" ngModel placeholder="Email" required />
+        </div>
+        <div class="input-form">
+          <input type="password" id="password" name="password" ngModel placeholder="Password" required />
+        </div>
+        <button type="submit">Register</button>
+        <p class="toggle-form"><a routerLink="/login">Already registered? Click here to login</a></p>
+      </form>
+    </div>
+  </div>
+</div>

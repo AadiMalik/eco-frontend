@@ -1,13 +1,17 @@
 <div class="signup">
   <div class="register">
     <div class="form-container">
-      <h2>Login</h2>
+      
       <form #userLogin="ngForm" (ngSubmit)="Login(userLogin.value)" class="login-form">
+        <h2>Login</h2>
+      <div *ngIf="authError!=''">
+        <p style="background-color:red; color:#fff; padding:10px;">{{authError}}</p>
+      </div>
         <div class="input-form">
-          <input type="email" id="email" placeholder="Email" required />
+          <input type="email" id="email" name="email" ngModel placeholder="Email" required />
         </div>
         <div class="input-form">
-          <input type="password" id="password" placeholder="Password" required/>
+          <input type="password" id="password" name="password" ngModel placeholder="Password" required/>
         </div>
         <button type="submit">Login</button>
         <p class="toggle-form"><a routerLink="/register">Not registered? Click here to register</a></p>

@@ -9,6 +9,7 @@ import { Login } from './data-type';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  authError:string ='';
   constructor(private auth:AuthService, private router:Router){
 
   }
@@ -17,5 +18,11 @@ export class LoginComponent {
   }
 Login(data:Login):void{
     this.auth.userLogin(data)
+    this.auth.isLoginError.subscribe((error)=>{
+      console.log(error);
+      if(error){
+        this.authError ="Email or Password is Wrong!";
+      }
+    })
   }
 }

@@ -1,6 +1,6 @@
 <nav>
   <div class="brand">
-    <h3>MyBrand</h3>
+    <h3>Eco</h3>
   </div>
   <div class="navigation">
     <ul class="menu">
@@ -8,9 +8,9 @@
       <li><a routerLink="about">About</a></li>
       <li><a routerLink="products">Products</a></li>
       <li><a routerLink="contact">Contact</a></li>
-      <li *ngIf=""><a routerLink="login">Login</a></li>
-      <li><a routerLink="logout">Logout</a></li>
-      <li><a routerLink="admin/profile">Profile</a></li>
+      <li *ngIf="userType!='User'"><a routerLink="login">Login</a></li>
+      <li *ngIf="userType=='User'"><a routerLink="logout">Logout</a></li>
+      <li *ngIf="userType=='User'"><a routerLink="admin/profile">Profile</a></li>
     </ul>
     <div class="search">
       <div class="search-content">

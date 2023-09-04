@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,5 +8,20 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  
+  userType:string ='';
+  constructor(private route:Router){
+
+  }
+
+  ngOnInit():void{
+    this.route.events.subscribe((val:any)=>{
+      if(val.url){
+        if(localStorage.getItem('auth-user')){
+          this.userType='User';
+        }else{
+          this.userType='UnAuth'
+        }
+      }
+    });
+  }
 }

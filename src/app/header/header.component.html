@@ -2,17 +2,42 @@
   <div class="brand">
     <h3>Eco</h3>
   </div>
-  <div class="navigation">
-    <ul class="menu">
+  <div class="navigation" [ngSwitch]="userType">
+    <ul class="menu" *ngSwitchCase="'UnAuth'">
       <li><a routerLink="/">Home</a></li>
       <li><a routerLink="about">About</a></li>
       <li><a routerLink="products">Products</a></li>
       <li><a routerLink="contact">Contact</a></li>
-      <li *ngIf="userType!='User'"><a routerLink="login">Login</a></li>
-      <li *ngIf="userType=='User'"><a routerLink="logout">Logout</a></li>
-      <li *ngIf="userType=='User'"><a routerLink="admin/profile">Profile</a></li>
+      <li><a routerLink="login">Login</a></li>
     </ul>
-    <div class="search">
+    <div class="search" *ngSwitchCase="'UnAuth'">
+      <div class="search-content">
+        <button class="search-button">Search</button>
+        <input type="text" class="search-input" placeholder="Search here..." />
+      </div>
+    </div>
+    <ul class="menu" *ngSwitchCase="'Admin'">
+      <li><a href="#">Products List</a></li>
+      <li><a href="#">Orders</a></li>
+      <li><a routerLink="admin/profile">Profile</a></li>
+      <li><a routerLink="logout">Logout</a></li>
+    </ul>
+    <ul class="menu" *ngSwitchCase="'User'">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="about">About</a></li>
+      <li><a routerLink="products">Products</a></li>
+      <li><a routerLink="contact">Contact</a></li>
+          <li><a href="#">Cart(0)</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">User Name</a>
+        <ul class="dropdown-content">
+          <li><a href="#">My Orders</a></li>
+          <li><a routerLink="admin/profile">Profile</a></li>
+          <li><a routerLink="logout">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="search" *ngSwitchCase="'User'">
       <div class="search-content">
         <button class="search-button">Search</button>
         <input type="text" class="search-input" placeholder="Search here..." />
@@ -20,4 +45,4 @@
     </div>
   </div>
 </nav>
-<br><br>
+<br /><br />

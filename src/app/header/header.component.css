@@ -90,3 +90,52 @@ nav {
   box-shadow: 1px 3px 4px #e6e6e6;
   height: 25px !important;
 }
+
+.dropbtn {
+  color: #fff;
+  background-color: #5747e1;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  min-width: 160px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: #5747e1;
+  color: #fff;
+  max-height: 0;
+  padding-top:15px;
+  min-width: 20px;
+  transition: max-height 0.15s ease-out;
+  overflow: hidden;
+}
+
+.dropdown-content li a {
+  color: #fff;
+  padding-bottom: 10px;
+  text-decoration: none;
+  list-style:none;
+  display: block;
+}
+
+.dropdown-content li a:hover {
+  background-color: #5747e1;
+}
+
+.dropdown:hover .dropdown-content {
+  max-height: 500px;
+  min-width: 160px;
+  transition: max-height 0.25s ease-in;
+}
+
+.dropdown:hover {
+  background-color: #5747e1;
+  border-bottom: 1px solid #e0e0e0;
+  transition: max-height 0.25s ease-in;
+}

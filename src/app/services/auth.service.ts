@@ -32,6 +32,7 @@ export class AuthService {
         if (result.body.success==true) {
           this.isLogin.next(true);
           localStorage.setItem('auth-user', JSON.stringify(result.body.data));
+          localStorage.setItem('auth-role', JSON.stringify(result.body.data.role));
           this.router.navigate(['admin/profile']);
         } else {
           this.isLoginError.emit(true);
@@ -40,6 +41,7 @@ export class AuthService {
   }
   userLogout() {
     localStorage.removeItem('auth-user');
+    localStorage.removeItem('auth-role');
     this.router.navigate(['login']);
   }
   reloadAuth() {

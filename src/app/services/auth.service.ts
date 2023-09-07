@@ -21,7 +21,7 @@ export class AuthService {
       .subscribe((result) => {
         this.isLogin.next(true);
         localStorage.setItem('auth-user', JSON.stringify(result.body));
-        this.router.navigate(['admin/profile']);
+        this.router.navigate(['profile']);
         return result;
       });
   }
@@ -31,9 +31,10 @@ export class AuthService {
       .subscribe((result:any) => {
         if (result.body.success==true) {
           this.isLogin.next(true);
+          console.log(this.isLogin);
           localStorage.setItem('auth-user', JSON.stringify(result.body.data));
           localStorage.setItem('auth-role', JSON.stringify(result.body.data.role));
-          this.router.navigate(['admin/profile']);
+          this.router.navigate(['profile']);
         } else {
           this.isLoginError.emit(true);
         }
@@ -46,8 +47,9 @@ export class AuthService {
   }
   reloadAuth() {
     if (localStorage.getItem('auth-user')) {
-      this.isLogin.next(true);
-      this.router.navigate(['admin/profile']);
+      return true;
+    }else{
+      return false;
     }
   }
 }

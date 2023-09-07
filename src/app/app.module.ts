@@ -16,6 +16,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './admin/user/user.component';
 import { LogoutComponent } from './logout/logout.component';
+import { MatIconModule } from '@angular/material/icon';
+import { AddProductsComponent } from './admin/add-products/add-products.component';
+import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 
 @NgModule({
   declarations: [
@@ -29,16 +32,20 @@ import { LogoutComponent } from './logout/logout.component';
     SignupComponent,
     FooterComponent,
     UserComponent,
-    LogoutComponent
+    LogoutComponent,
+    AddProductsComponent,
+    AdminProductsComponent,
   ],
   imports: [
     BrowserModule,
     CommonModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

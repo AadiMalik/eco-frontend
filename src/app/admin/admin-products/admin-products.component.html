@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>
+    Products <a class="button" routerLink="/admin/add-product">Add Product</a>
+  </h2>
+  <table border="1" width="100%">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Color</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of products">
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.color }}</td>
+        <td><img src="{{ item.url }}" alt="" style="width:200px; height: 200px;" srcset=""></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

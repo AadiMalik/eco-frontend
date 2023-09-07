@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="form-container">
+      <form #addProduct="ngForm" (ngSubmit)="AddProduct(addProduct.value)" class="register-form">
+        <h2>Add Product</h2>
+        <div class="input-form">
+          <input type="text" id="name" name="name" ngModel placeholder="Enter Product Name" required />
+        </div>
+        <div class="input-form">
+          <input type="text" id="price" name="price" ngModel placeholder="Enter Product Price" required />
+        </div>
+        <div class="input-form">
+          <input type="text" id="category" name="category" ngModel placeholder="Enter Product Category" required />
+        </div>
+        <div class="input-form">
+          <input type="text" id="color" name="color" ngModel placeholder="Enter Product Color" required />
+        </div>
+        <div class="input-form">
+          <input type="url" id="url" name="url" ngModel placeholder="Enter Image Url" required />
+        </div>
+        <div class="float">
+        <div class="float-left"><button type="submit">Save</button></div>
+        <div class="float-right">
+            <a class="cancel" routerLink="/admin/products">Cancel</a>
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

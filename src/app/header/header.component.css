@@ -38,9 +38,9 @@ nav {
   margin: 0 15px;
 }
 
-.menu li a:hover {
+/* .menu li a:hover {
   text-decoration: underline;
-}
+} */
 
 .search {
   position: relative;
@@ -115,7 +115,12 @@ nav {
   transition: max-height 0.15s ease-out;
   overflow: hidden;
 }
-
+.text-white{
+  color:#fff;
+}
+a{
+  text-decoration: none;
+}
 .dropdown-content li a {
   color: #fff;
   padding-bottom: 10px;
@@ -138,4 +143,9 @@ nav {
   background-color: #5747e1;
   border-bottom: 1px solid #e0e0e0;
   transition: max-height 0.25s ease-in;
+}
+
+.icon{
+  font-size:22px;
+  margin: -7px 0px;
 }

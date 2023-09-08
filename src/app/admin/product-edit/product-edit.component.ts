@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { ProductService } from 'src/app/services/product.service';
-import { AddProduct } from '../add-products/data-type';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Product } from 'src/app/data-type/product-type';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
-  selector: 'app-edit-products',
-  templateUrl: './edit-products.component.html',
-  styleUrls: ['./edit-products.component.css'],
+  selector: 'app-product-edit',
+  templateUrl: './product-edit.component.html',
+  styleUrls: ['./product-edit.component.css'],
 })
-export class EditProductsComponent {
-  product: undefined | AddProduct;
+export class ProductEditComponent {
+  product: undefined | Product;
   constructor(
     private product_service: ProductService,
     private route: ActivatedRoute
@@ -23,9 +23,9 @@ export class EditProductsComponent {
       });
   }
 
-  UpdateProduct(data: AddProduct): void {
-    if(this.product){
-      data.id=this.product.id;
+  UpdateProduct(data: Product): void {
+    if (this.product) {
+      data.id = this.product.id;
     }
     this.product_service.updateProduct(data);
   }

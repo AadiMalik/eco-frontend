@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "eco": {
+    "eco1": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/eco",
+            "outputPath": "dist/eco1",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,7 +25,6 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -61,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "eco:build:production"
+              "browserTarget": "eco1:build:production"
             },
             "development": {
-              "browserTarget": "eco:build:development"
+              "browserTarget": "eco1:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "eco:build"
+            "browserTarget": "eco1:build"
           }
         },
         "test": {
@@ -97,6 +96,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "3bad5743-9a68-4f8c-a110-8d76d64d8206"
   }
 }

@@ -9,8 +9,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   userType: string = 'UnAuth';
   userName: string = '';
-  constructor(private route: Router) {
-  }
+  constructor(private route: Router) {}
 
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {

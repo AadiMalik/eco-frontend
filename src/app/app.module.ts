@@ -3,41 +3,39 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { AboutComponent } from './about/about.component';
-import { ProductsComponent } from './products/products.component';
-import { ContactComponent } from './contact/contact.component';
-import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { CommonModule } from '@angular/common';
-import { SignupComponent } from './signup/signup.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { LogoutComponent } from './logout/logout.component';
+import { UserProductComponent } from './user-product/user-product.component';
+import { ProductListComponent } from './admin/product-list/product-list.component';
+import { ProductAddComponent } from './admin/product-add/product-add.component';
+import { ProductEditComponent } from './admin/product-edit/product-edit.component';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './admin/user/user.component';
-import { LogoutComponent } from './logout/logout.component';
-import { MatIconModule } from '@angular/material/icon';
-import { AddProductsComponent } from './admin/add-products/add-products.component';
-import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
-import { EditProductsComponent } from './admin/edit-products/edit-products.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    AboutComponent,
-    ProductsComponent,
-    ContactComponent,
-    LoginComponent,
     HomeComponent,
-    SignupComponent,
+    AboutComponent,
+    ContactComponent,
+    HeaderComponent,
     FooterComponent,
-    UserComponent,
+    LoginComponent,
+    SignupComponent,
     LogoutComponent,
-    AddProductsComponent,
-    AdminProductsComponent,
-    EditProductsComponent,
+    UserProductComponent,
+    ProductListComponent,
+    ProductAddComponent,
+    ProductEditComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,10 +43,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    MatIconModule,
-    HttpClientModule,
-    NgbModule,
-    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

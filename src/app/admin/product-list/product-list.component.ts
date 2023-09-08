@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { ProductService } from 'src/app/services/product.service';
-import { AddProduct } from '../add-products/data-type';
+import { Product } from 'src/app/data-type/product-type';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
-  selector: 'app-admin-products',
-  templateUrl: './admin-products.component.html',
-  styleUrls: ['./admin-products.component.css'],
+  selector: 'app-product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css'],
 })
-export class AdminProductsComponent {
-  products: undefined | AddProduct[];
+export class ProductListComponent {
+  products: undefined | Product[];
   message: undefined | string;
   constructor(private product_service: ProductService) {}
   ngOnInit(): void {

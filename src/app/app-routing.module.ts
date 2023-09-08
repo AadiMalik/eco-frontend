@@ -2,17 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { UserProductComponent } from './user-product/user-product.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
-import { ProductsComponent } from './products/products.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserComponent } from './admin/user/user.component';
 import { authGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
-import { AddProductsComponent } from './admin/add-products/add-products.component';
-import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
-import { EditProductsComponent } from './admin/edit-products/edit-products.component';
+import { ProductListComponent } from './admin/product-list/product-list.component';
+import { ProductAddComponent } from './admin/product-add/product-add.component';
+import { ProductEditComponent } from './admin/product-edit/product-edit.component';
 
 const routes: Routes = [
   {
@@ -25,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: 'products',
-    component: ProductsComponent,
+    component: UserProductComponent,
   },
   {
     path: 'contact',
@@ -52,17 +51,17 @@ const routes: Routes = [
 
   {
     path: 'admin/products',
-    component: AdminProductsComponent,
+    component: ProductListComponent,
     canActivate: [authGuard],
   },
   {
     path: 'admin/add-product',
-    component: AddProductsComponent,
+    component: ProductAddComponent,
     canActivate: [authGuard],
   },
   {
     path: 'admin/edit-product/:id',
-    component: EditProductsComponent,
+    component: ProductEditComponent,
     canActivate: [authGuard],
   },
 ];

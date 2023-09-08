@@ -1,9 +1,9 @@
-import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Register } from '../signup/data-type';
-import { Login } from '../login/data-type';
-import { BehaviorSubject } from 'rxjs';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { Register } from '../data-type/register-type';
+import { Login } from '../data-type/login-type';
 
 @Injectable({
   providedIn: 'root',
@@ -28,12 +28,15 @@ export class AuthService {
   userLogin(data: Login) {
     this.http
       .post('http://localhost/EcoApi/api/login', data, { observe: 'response' })
-      .subscribe((result:any) => {
-        if (result.body.success==true) {
+      .subscribe((result: any) => {
+        if (result.body.success == true) {
           this.isLogin.next(true);
           console.log(this.isLogin);
           localStorage.setItem('auth-user', JSON.stringify(result.body.data));
-          localStorage.setItem('auth-role', JSON.stringify(result.body.data.role));
+          localStorage.setItem(
+            'auth-role',
+            JSON.stringify(result.body.data.role)
+          );
           this.router.navigate(['profile']);
         } else {
           this.isLoginError.emit(true);
@@ -48,7 +51,7 @@ export class AuthService {
   reloadAuth() {
     if (localStorage.getItem('auth-user')) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }

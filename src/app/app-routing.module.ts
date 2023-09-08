@@ -12,6 +12,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { AddProductsComponent } from './admin/add-products/add-products.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
+import { EditProductsComponent } from './admin/edit-products/edit-products.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,11 @@ const routes: Routes = [
   {
     path: 'admin/add-product',
     component: AddProductsComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'admin/edit-product/:id',
+    component: EditProductsComponent,
     canActivate: [authGuard],
   },
 ];

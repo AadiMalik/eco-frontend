@@ -9,11 +9,23 @@ import { AddProduct } from '../add-products/data-type';
 })
 export class AdminProductsComponent {
   products: undefined | AddProduct[];
-  constructor(private product: ProductService) {}
+  message: undefined | string;
+  constructor(private product_service: ProductService) {}
   ngOnInit(): void {
-    this.product.getProducts().subscribe((response) => {
+    this.product_service.getProducts().subscribe((response) => {
       console.log(response);
       this.products = response;
     });
+  }
+  deleteProduct(id: number) {
+    this.product_service.deleteProductById(id).subscribe((response) => {
+      if (response) {
+        this.message = 'Product Delete Successfully!';
+        this.ngOnInit();
+      }
+    });
+    setTimeout(() => {
+      this.message = undefined;
+    }, 2000);
   }
 }

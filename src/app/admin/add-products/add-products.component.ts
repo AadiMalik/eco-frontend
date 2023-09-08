@@ -8,8 +8,10 @@ import { AddProduct } from './data-type';
   styleUrls: ['./add-products.component.css'],
 })
 export class AddProductsComponent {
-  constructor(private product: ProductService) {}
+  message: undefined | string;
+  constructor(private product_service: ProductService) {}
   AddProduct(data: AddProduct): void {
-    this.product.addProduct(data);
+    this.product_service.addProduct(data);
+    this.message = 'Product Added Successfully!';
   }
 }

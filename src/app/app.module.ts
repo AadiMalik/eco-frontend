@@ -19,6 +19,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { MatIconModule } from '@angular/material/icon';
 import { AddProductsComponent } from './admin/add-products/add-products.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
+import { EditProductsComponent } from './admin/edit-products/edit-products.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
     LogoutComponent,
     AddProductsComponent,
     AdminProductsComponent,
+    EditProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,8 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
     HttpClientModule,
     MatIconModule,
     HttpClientModule,
+    NgbModule,
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,7 +1,6 @@
 <div class="signup">
   <div class="register">
     <div class="form-container">
-      
       <form #userLogin="ngForm" (ngSubmit)="Login(userLogin.value)" class="login-form">
         <h2>Login</h2>
       <div *ngIf="authError!=''">
